@@ -1,0 +1,51 @@
+
+**Task 2 ask Yaron** 
+Goal:
+
+Develop a VR application utilizing Passthrough technology to integrate a virtual maze into an escape room experience.
+-Player 1(VR): Views the real escape room via Passthrough, with a 3D maze overlay.
+-Player 2(with controllers): Controls a ball inside the maze based on guidance from Player 1.
+**Main Requirement:The maze must remain anchored to a fixed physical location in the room and must not move when the player moves their head.
+
+Task Breakdown:
+1. Basic Implementation:
+- Unity scene using Passthrough (Oculus Quest).
+- Add a 3D cube object that can be moved by hand(controller).
+- Ensure that the cube remains fixed in VR World Space and does not move with head motion.
+
+2. Wall Surface (Mesh) Acquisition:
+- Explore the possibility of receiving a 3D mesh model of the wall in advance.
+- Alternatively: Use Depth API to automatically generate the mesh of the wall.
+- Or using exisiting wall in real world.
+
+3. Loading the Maze Model:
+- Load the 3D maze model into the scene.
+- Anchor the maze properly in the virtual world.
+- Validate that the maze remains stable during head movements.
+
+ 4. Finding the Transformation to Position the Maze on the Wall
+Implementation Options:
+  1. Manual selection of 4 points on the wall by the user.
+  2. Placing 4 physical markers on the wall for automatic recognition.
+  3. Using the wall’s Mesh for precise alignment.
+The goal of this step is to accurately and reliably anchor the maze to the real world environment.
+
+5. Midpoint Review
+- Joint review of the positioning techniques.
+- Decision: Use the previous maze model or switch to the new one.
+
+6. Real-World Testing
+- Schedule time and location for physical testing in the actual escape room.
+- Verify the maze’s stability and alignment in the real environment.
+
+Relevant project links:
+- ARCore Depth Lab: (https://github.com/googlesamples/arcore-depth-lab)
+- Oculus DepthAPI Samples: (https://github.com/oculus-samples/Unity-DepthAPI)
+- Oculus Passthrough Demos: (https://github.com/dilmerv/OculusPassthroughDemos)
+- Unity AR Foundation Samples: (https://github.com/Unity-Technologies/arfoundation-samples)
+- Meta OpenXR MR Example: (https://github.com/Unity-Technologies/mr-example-meta-openxr)
+
+Expected Challenges:
+- Achieving stable anchoring of the virtual model to the physical world via Passthrough.
+- Precisely identifying positions within the physical room.
+- Fully resolving the issue of **maze movement with head tracking.
